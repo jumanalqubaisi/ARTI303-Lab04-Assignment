@@ -1,0 +1,45 @@
+20 ?- house = house.
+result: true.
+why: they are identical 
+
+21 ?- house = abc.
+result: false.
+why: house and abc are different atoms
+
+22 ?- edge(a,b) = edge(C,b).
+result: C = a.
+why: The terms can be unified by assigning a to C
+
+23 ?- edge(a,d) = edge(C,B).
+results:
+C = a,
+B = d.
+why: The terms can be unified by assigning a to C and d to B
+
+24 ?- edge(C,B) = edge(a,d).
+results:
+C = a,
+B = d.
+why: The terms can be unified by assigning a to C and d to B
+
+25 ?-  edge(A,f(g,h)) = edge(a,B).
+results:
+A = a,
+B = f(g, h).
+why: The terms can be unified by assigning a to A and f(g,h) to B
+
+26 ?- edge(A,A) = edge(b,c).
+result: false.
+why: The terms cannot be unified because A would have to be both b and c
+
+27 ?- edge(A,A) = edge(b,b).
+result: A = b.
+why: The terms can be unified because both occurrences of A can have the same value, b.
+
+28 ?- A = B, B = f.
+result: A = B, B = f.
+why: The terms can be unified because A and B are linked, and B is unified with f.
+
+29 ?- A = B, B = f, A = e.
+result: false.
+why: The terms cannot be unified because A becomes f, but the last condition requires A to be e.

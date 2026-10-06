@@ -1,0 +1,32 @@
+1. shows the names of all females
+
+?- female(X).
+X = sara ;
+X = nora.
+
+2. shows whether there is any male.
+
+?- male(_).
+true .
+
+3. shows the grandparent of Faisal.
+
+?- parent(X,Y), parent(Y,faisal).
+X = ali,
+Y = Muhammad.
+
+4. shows all daughters of Ahmad
+
+?- parent(ahmad,X), female(X).
+X = sara ;
+X = nora.
+
+5. shows whether Ahmad and Muhammad have a common parent.
+
+?- parent(X,ahmad), parent(X,muhammad).
+X = ali.
+
+6. shows whether Khan is the brother of Nora
+
+?- parent(X,khan), parent(X,nora), male(khan).
+X = ahmad.
